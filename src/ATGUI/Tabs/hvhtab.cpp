@@ -3,14 +3,14 @@
 void HvH::RenderTab()
 {
 	const char* yTypes[] = {
-			"SLOW SPIN", "FAST SPIN", "JITTER", "BACKJITTER", "SIDE", "BACKWARDS", "FORWARDS", "LEFT", "RIGHT", "STATIC", "STATIC JITTER", "STATIC SMALL JITTER", "LUA", "LUA2", "CASUALAA",// safe
-			"LISP", "LISP SIDE", "LISP JITTER", "ANGEL BACKWARDS", "ANGEL INVERSE", "ANGEL SPIN", "LOWERBODY", "LBYONGROUND", "LUA UNCLAMPED", "LUA UNCLAMPED2", // untrusted
+			"SLOW SPIN", "FAST SPIN", "JITTER", "BACKJITTER", "SIDE", "BACKWARDS", "FORWARDS", "LEFT", "RIGHT", "STATIC", "STATIC JITTER", "STATIC SMALL JITTER", "CASUALAA",// safe
+			"ANGEL BACKWARDS", "ANGEL INVERSE", "ANGEL SPIN", "LOWERBODY", "LBYONGROUND", // untrusted
 	};
 
-	const char* xTypes[] = {
-			"UP", "DOWN", "DANCE", "FRONT", "LUA", // safe
-			"FAKE UP", "FAKE DOWN", "LISP DOWN", "ANGEL DOWN", "ANGEL UP", "LUA UNCLAMPED" // untrusted
-	};
+	//const char* xTypes[] = {
+	//		"UP", "DOWN", "DANCE", "FRONT", "LUA", // safe
+	//		"FAKE UP", "FAKE DOWN", "LISP DOWN", "ANGEL DOWN", "ANGEL UP", "LUA UNCLAMPED" // untrusted
+	//};
 
 	ImGui::Columns(2, NULL, true);
 	{
@@ -125,8 +125,8 @@ void HvH::RenderTab()
 			ImGui::Text(XORSTR("Movement"));
 			ImGui::Checkbox(XORSTR("Auto Crouch"), &Settings::Aimbot::AutoCrouch::enabled);
 
-			ImGui::Separator();
-			ImGui::Checkbox(XORSTR("Lua Debug Mode"), &Settings::AntiAim::Lua::debugMode);
+			//ImGui::Separator();
+			/*ImGui::Checkbox(XORSTR("Lua Debug Mode"), &Settings::AntiAim::Lua::debugMode);
 			if( Settings::AntiAim::Pitch::type == AntiAimType_X::LUA1 || Settings::AntiAim::Pitch::type == AntiAimType_X ::LUA_UNCLAMPED )
 			{
 				ImGui::Text(XORSTR("Lua AntiAim Editor -- X Axis"));
@@ -180,7 +180,7 @@ void HvH::RenderTab()
 					ImGui::Text(XORSTR("Lua AntiAim Editor -- Y2 Axis (FAKE)"));
 					ImGui::InputTextMultiline(XORSTR("##LUAY2"), Settings::AntiAim::Lua::scriptY2, sizeof(Settings::AntiAim::Lua::scriptY2));
 				}
-			}
+			}*/
 			ImGui::EndChild();
 		}
 	}

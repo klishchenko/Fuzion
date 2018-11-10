@@ -9,9 +9,6 @@
 
 namespace AntiAim
 {
-	void LuaInit();
-	void LuaCleanup();
-
 	//Hooks
 	void CreateMove(CUserCmd* cmd);
 }

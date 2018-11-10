@@ -105,7 +105,6 @@ void MainThread()
 
 	srand(time(NULL)); // Seed random # Generator so we can call rand() later
 
-	AntiAim::LuaInit();
 
     cvar->ConsoleColorPrintf(ColorRGBA(0, 225, 0), XORSTR("\nFuzion Successfully loaded.\n"));
 }
@@ -128,7 +127,6 @@ void __attribute__((destructor)) Shutdown()
 	SDL2::UnhookWindow();
 	SDL2::UnhookPollEvent();
 
-	AntiAim::LuaCleanup();
 
 	Aimbot::XDOCleanup();
 	NoSmoke::Cleanup();
